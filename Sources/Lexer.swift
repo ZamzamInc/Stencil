@@ -12,8 +12,9 @@ struct Lexer {
     self.templateString = templateString
 
     self.lines = templateString.components(separatedBy: .newlines).enumerated().compactMap {
-      guard !$0.element.isEmpty else { return nil }
-      return (content: $0.element, number: UInt($0.offset + 1), templateString.range(of: $0.element)!)
+      guard !$0.element.isEmpty,
+        let range = templateString.range(of: $0.element) else { return nil }
+      return (content: $0.element, number: UInt($0.offset + 1), range)
     }
   }
 
@@ -24,8 +25,8 @@ struct Lexer {
       let end = string.index(string.endIndex, offsetBy: -2)
       let trimmed = String(string[start..<end])
         .components(separatedBy: "\n")
-        .filter({ !$0.isEmpty })
-        .map({ $0.trim(character: " ") })
+        .filter { !$0.isEmpty }
+        .map { $0.trim(character: " ") }
         .joined(separator: " ")
       return trimmed
     }
@@ -59,8 +60,8 @@ struct Lexer {
     let map = [
       "{{": "}}",
       "{%": "%}",
-      "{#": "#}",
-      ]
+      "{#": "#}"
+    ]
 
     while !scanner.isEmpty {
       if let text = scanner.scan(until: ["{{", "{%", "{#"]) {
@@ -68,7 +69,7 @@ struct Lexer {
           tokens.append(createToken(string: text.1, at: scanner.range))
         }
 
-        let end = map[text.0]!
+        guard let end = map[text.0] else { continue }
         let result = scanner.scan(until: end, returnUntil: true)
         tokens.append(createToken(string: result, at: scanner.range))
       } else {
@@ -161,7 +162,6 @@ class Scanner {
     return nil
   }
 }
-
 
 extension String {
   func findFirstNot(character: Character) -> String.Index? {

@@ -14,9 +14,9 @@ open class Extension {
 
   /// Registers a simple template tag with a name and a handler
   public func registerSimpleTag(_ name: String, handler: @escaping (Context) throws -> String) {
-    registerTag(name, parser: { parser, token in
-      return SimpleNode(token: token, handler: handler)
-    })
+    registerTag(name) { _, token in
+      SimpleNode(token: token, handler: handler)
+    }
   }
 
   /// Registers a template filter with the given name
@@ -29,7 +29,6 @@ open class Extension {
     filters[name] = .arguments(filter)
   }
 }
-
 
 class DefaultExtension: Extension {
   override init() {
@@ -61,7 +60,6 @@ class DefaultExtension: Extension {
     registerFilter("indent", filter: indentFilter)
   }
 }
-
 
 protocol FilterType {
   func invoke(value: Any?, arguments: [Any?]) throws -> Any?

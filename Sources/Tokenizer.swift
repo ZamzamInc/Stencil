@@ -1,6 +1,5 @@
 import Foundation
 
-
 extension String {
   /// Split a string by a separator leaving quoted phrases together
   func smartSplit(separator: Character = " ") -> [String] {
@@ -12,11 +11,11 @@ extension String {
 
     let specialCharacters = ",|:"
     func appendWord(_ word: String) {
-      if components.count > 0 {
+      if !components.isEmpty {
         if let precedingChar = components.last?.last, specialCharacters.contains(precedingChar) {
-          components[components.count-1] += word
+          components[components.count - 1] += word
         } else if specialCharacters.contains(word) {
-          components[components.count-1] += word
+          components[components.count - 1] += word
         } else {
           components.append(word)
         }
@@ -26,11 +25,13 @@ extension String {
     }
 
     for character in self {
-      if character == "'" { singleQuoteCount += 1 }
-      else if character == "\"" { doubleQuoteCount += 1 }
+      if character == "'" {
+        singleQuoteCount += 1
+      } else if character == "\"" {
+        doubleQuoteCount += 1
+      }
 
       if character == separate {
-
         if separate != separator {
           word.append(separate)
         } else if (singleQuoteCount % 2 == 0 || doubleQuoteCount % 2 == 0) && !word.isEmpty {
@@ -66,12 +67,13 @@ public struct SourceMap: Equatable {
 
   static let unknown = SourceMap()
 
-  public static func ==(lhs: SourceMap, rhs: SourceMap) -> Bool {
+  public static func == (lhs: SourceMap, rhs: SourceMap) -> Bool {
     return lhs.filename == rhs.filename && lhs.location == rhs.location
   }
 }
 
-public enum Token : Equatable {
+public enum Token: Equatable {
+  // swiftlint:disable identifier_name
   /// A token representing a piece of text.
   case text(value: String, at: SourceMap)
 
@@ -83,6 +85,7 @@ public enum Token : Equatable {
 
   /// A token representing a template block.
   case block(value: String, at: SourceMap)
+  // swiftlint:enable identifier_name
 
   /// Returns the underlying value as an array seperated by spaces
   public func components() -> [String] {

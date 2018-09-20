@@ -72,7 +72,7 @@ func indentFilter(value: Any?, arguments: [Any?]) throws -> Any? {
   }
 
   var indentWidth = 4
-  if arguments.count > 0 {
+  if !arguments.isEmpty {
     guard let value = arguments[0] as? Int else {
       throw TemplateSyntaxError("""
         'indent' filter width argument must be an Integer (\(String(describing: arguments[0])))
@@ -99,19 +99,17 @@ func indentFilter(value: Any?, arguments: [Any?]) throws -> Any? {
     indentFirst = value
   }
 
-  let indentation = [String](repeating: indentationChar, count: indentWidth).joined(separator: "")
+  let indentation = [String](repeating: indentationChar, count: indentWidth).joined()
   return indent(stringify(value), indentation: indentation, indentFirst: indentFirst)
 }
-
 
 func indent(_ content: String, indentation: String, indentFirst: Bool) -> String {
   guard !indentation.isEmpty else { return content }
 
   var lines = content.components(separatedBy: .newlines)
   let firstLine = (indentFirst ? indentation : "") + lines.removeFirst()
-  let result = lines.reduce([firstLine]) { (result, line) in
-    return result + [(line.isEmpty ? "" : "\(indentation)\(line)")]
+  let result = lines.reduce([firstLine]) { result, line in
+    result + [(line.isEmpty ? "" : "\(indentation)\(line)")]
   }
   return result.joined(separator: "\n")
 }
-
