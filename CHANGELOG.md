@@ -37,6 +37,9 @@
 - Update to Spectre 0.9.0.  
   [Ilya Puchka](https://github.com/ilyapuchka)
   [#247](https://github.com/stencilproject/Stencil/pull/247)
+- Added SwiftLint to the project.  
+  [David Jennes](https://github.com/djbe)
+  [#249](https://github.com/stencilproject/Stencil/pull/249)
 
 
 ## 0.12.1
