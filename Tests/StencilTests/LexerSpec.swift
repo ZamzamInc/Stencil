@@ -1,4 +1,3 @@
-import PathKit
 import Spectre
 @testable import Stencil
 import XCTest
@@ -122,16 +121,6 @@ class LexerTests: XCTestCase {
         try expect(tokens[3]) == Token.variable(value: "stuff", at: makeSourceMap("stuff", for: lexer))
         try expect(tokens[4]) == Token.block(value: "endif", at: makeSourceMap("endif", for: lexer))
       }
-    }
-  }
-
-  func testPerformance() throws {
-    let path = Path(#file) + ".."  + "fixtures" + "huge.html"
-    let content: String = try path.read()
-
-    measure {
-      let lexer = Lexer(templateString: content)
-      _ = lexer.tokenize()
     }
   }
 }

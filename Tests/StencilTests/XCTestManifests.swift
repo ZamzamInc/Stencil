@@ -54,13 +54,6 @@ extension InheritenceTests {
     ]
 }
 
-extension LexerTests {
-    static let __allTests = [
-        ("testLexer", testLexer),
-        ("testPerformance", testPerformance),
-    ]
-}
-
 extension NodeTests {
     static let __allTests = [
         ("testNode", testNode),
@@ -76,12 +69,6 @@ extension NowNodeTests {
 extension StencilTests {
     static let __allTests = [
         ("testStencil", testStencil),
-    ]
-}
-
-extension TemplateLoaderTests {
-    static let __allTests = [
-        ("testTemplateLoader", testTemplateLoader),
     ]
 }
 

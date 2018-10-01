@@ -43,7 +43,6 @@
 		OBJ_129 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* Tokenizer.swift */; };
 		OBJ_130 /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Variable.swift */; };
 		OBJ_131 /* _SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* _SwiftSupport.swift */; };
-		OBJ_133 /* PathKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "PathKit::PathKit::Product" /* PathKit.framework */; };
 		OBJ_140 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_151 /* ContextSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* ContextSpec.swift */; };
 		OBJ_152 /* EnvironmentSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* EnvironmentSpec.swift */; };
@@ -66,9 +65,6 @@
 		OBJ_169 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* XCTestManifests.swift */; };
 		OBJ_171 /* Spectre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Spectre::Spectre::Product" /* Spectre.framework */; };
 		OBJ_172 /* Stencil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Stencil::Stencil::Product" /* Stencil.framework */; };
-		OBJ_173 /* PathKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "PathKit::PathKit::Product" /* PathKit.framework */; };
-		OBJ_77 /* PathKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* PathKit.swift */; };
-		OBJ_84 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_53 /* Package.swift */; };
 		OBJ_90 /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* Case.swift */; };
 		OBJ_91 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* Context.swift */; };
 		OBJ_92 /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* Expectation.swift */; };
@@ -81,13 +77,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8B63A1F0216278E4003868F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "PathKit::PathKit";
-			remoteInfo = PathKit;
-		};
 		8B63A1F1216278E4003868F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
@@ -101,13 +90,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = "Stencil::Stencil";
 			remoteInfo = Stencil;
-		};
-		8B63A1F3216278E4003868F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "PathKit::PathKit";
-			remoteInfo = PathKit;
 		};
 		8B63A1F4216278E5003868F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -173,7 +155,6 @@
 		OBJ_66 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/basem/Developer/Forks/Stencil/.build/checkouts/Spectre.git--7350273545254861105/Package.swift"; sourceTree = "<group>"; };
 		OBJ_8 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		OBJ_9 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		"PathKit::PathKit::Product" /* PathKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PathKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Spectre::Spectre::Product" /* Spectre.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spectre.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Stencil::Stencil::Product" /* Stencil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Stencil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Stencil::StencilTests::Product" /* StencilTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = StencilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,7 +165,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_133 /* PathKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,14 +174,6 @@
 			files = (
 				OBJ_171 /* Spectre.framework in Frameworks */,
 				OBJ_172 /* Stencil.framework in Frameworks */,
-				OBJ_173 /* PathKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_78 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +284,6 @@
 			isa = PBXGroup;
 			children = (
 				"Stencil::Stencil::Product" /* Stencil.framework */,
-				"PathKit::PathKit::Product" /* PathKit.framework */,
 				"Spectre::Spectre::Product" /* Spectre.framework */,
 				"Stencil::StencilTests::Product" /* StencilTests.xctest */,
 			);
@@ -350,36 +321,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		"PathKit::PathKit" /* PathKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_73 /* Build configuration list for PBXNativeTarget "PathKit" */;
-			buildPhases = (
-				OBJ_76 /* Sources */,
-				OBJ_78 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = PathKit;
-			productName = PathKit;
-			productReference = "PathKit::PathKit::Product" /* PathKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		"PathKit::SwiftPMPackageDescription" /* PathKitPackageDescription */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_80 /* Build configuration list for PBXNativeTarget "PathKitPackageDescription" */;
-			buildPhases = (
-				OBJ_83 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = PathKitPackageDescription;
-			productName = PathKitPackageDescription;
-			productType = "com.apple.product-type.framework";
-		};
 		"Spectre::Spectre" /* Spectre */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_86 /* Build configuration list for PBXNativeTarget "Spectre" */;
@@ -420,7 +361,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_134 /* PBXTargetDependency */,
 			);
 			name = Stencil;
 			productName = Stencil;
@@ -439,7 +379,6 @@
 			dependencies = (
 				OBJ_174 /* PBXTargetDependency */,
 				OBJ_175 /* PBXTargetDependency */,
-				OBJ_176 /* PBXTargetDependency */,
 			);
 			name = StencilTests;
 			productName = StencilTests;
@@ -480,8 +419,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"PathKit::PathKit" /* PathKit */,
-				"PathKit::SwiftPMPackageDescription" /* PathKitPackageDescription */,
 				"Spectre::Spectre" /* Spectre */,
 				"Spectre::SwiftPMPackageDescription" /* SpectrePackageDescription */,
 				"Stencil::Stencil" /* Stencil */,
@@ -563,22 +500,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_76 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_77 /* PathKit.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_83 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_84 /* Package.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		OBJ_89 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
@@ -598,11 +519,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_134 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "PathKit::PathKit" /* PathKit */;
-			targetProxy = 8B63A1F0216278E4003868F7 /* PBXContainerItemProxy */;
-		};
 		OBJ_145 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Stencil::StencilTests" /* StencilTests */;
@@ -617,11 +533,6 @@
 			isa = PBXTargetDependency;
 			target = "Stencil::Stencil" /* Stencil */;
 			targetProxy = 8B63A1F2216278E4003868F7 /* PBXContainerItemProxy */;
-		};
-		OBJ_176 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "PathKit::PathKit" /* PathKit */;
-			targetProxy = 8B63A1F3216278E4003868F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -812,72 +723,6 @@
 			};
 			name = Release;
 		};
-		OBJ_74 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Stencil.xcodeproj/PathKit_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = PathKit;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.2;
-				TARGET_NAME = PathKit;
-			};
-			name = Debug;
-		};
-		OBJ_75 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Stencil.xcodeproj/PathKit_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = PathKit;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.2;
-				TARGET_NAME = PathKit;
-			};
-			name = Release;
-		};
-		OBJ_81 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4.2 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
-				SWIFT_VERSION = 4.2;
-			};
-			name = Debug;
-		};
-		OBJ_82 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4.2 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
-				SWIFT_VERSION = 4.2;
-			};
-			name = Release;
-		};
 		OBJ_87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -979,24 +824,6 @@
 			buildConfigurations = (
 				OBJ_3 /* Debug */,
 				OBJ_4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_73 /* Build configuration list for PBXNativeTarget "PathKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_74 /* Debug */,
-				OBJ_75 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_80 /* Build configuration list for PBXNativeTarget "PathKitPackageDescription" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_81 /* Debug */,
-				OBJ_82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
